@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_abnb/screens/notif_screen.dart';
 import 'profile_screen.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
@@ -14,11 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final iconList = <IconData>[
     Icons.home,
+    Icons.notifications,
     Icons.person,
   ];
 
   final List<Widget> _pages = [
     HomeContent(),
+    NotificationScreen(),
     ProfileScreen(),
   ];
 
@@ -36,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
         activeIndex: _bottomNavIndex,
-        gapLocation: GapLocation.center,
+        gapLocation: GapLocation.none,
         notchSmoothness: NotchSmoothness.verySmoothEdge,
         backgroundColor: Colors.white12,
         leftCornerRadius: 10,
